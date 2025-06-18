@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Mert Tezdoğan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 19.8, "left": -48.6, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -188.57, "left": -41.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 27.5, "left": 316.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -157,
+      "left": 316.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -170.4,
+      "left": -151.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:VSS", "uno:GND.1", "green", [ "v48", "h66.9" ] ],
+    [ "lcd1:VDD", "uno:5V", "#8f4814", [ "v48", "h-67.1", "v230.4", "h169" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v144", "h-254.2" ] ],
+    [ "pot1:SIG", "lcd1:V0", "orange", [ "v19.2", "h-48.4", "v-115.2", "h-287.7" ] ],
+    [ "pot1:GND", "uno:GND.2", "black", [ "v134.4", "h-172.8", "v0", "h-51.9" ] ],
+    [ "lcd1:RS", "uno:0", "gold", [ "v28.8", "h0.3" ] ],
+    [ "lcd1:E", "uno:1", "blue", [ "v9.6", "h144" ] ],
+    [ "lcd1:D4", "uno:4", "violet", [ "v38.4", "h86.4" ] ],
+    [ "lcd1:D5", "uno:5", "gray", [ "v48", "h0.1" ] ],
+    [ "lcd1:D6", "uno:6", "white", [ "v67.2", "h48.2" ] ],
+    [ "lcd1:D7", "uno:7", "cyan", [ "v76.8", "h29.1" ] ],
+    [ "lcd1:A", "uno:5V", "green", [ "v9.6", "h268.7", "v297.6", "h-278.4" ] ],
+    [ "lcd1:K", "uno:GND.2", "#8f4814", [ "v0", "h268.8", "v316.8", "h-278.4" ] ],
+    [ "btn1:1.l", "uno:A0", "cyan", [ "h-48", "v345.6", "h-115.2" ] ],
+    [ "btn1:2.r", "uno:GND.3", "cyan", [ "h38.6", "v393.8", "h-288" ] ],
+    [ "bz1:2", "uno:8", "red", [ "v0" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v96", "h191.7" ] ],
+    [ "lcd1:RW", "uno:GND.1", "cyan", [ "v19.2", "h38.3" ] ]
+  ],
+  "dependencies": {}
+}
